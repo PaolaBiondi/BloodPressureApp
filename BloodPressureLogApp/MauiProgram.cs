@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BloodPressureLogApp.Extensions;
+using Microsoft.Extensions.Logging;
+using Microcharts.Maui;
 
 namespace BloodPressureLogApp
 {
@@ -9,6 +11,7 @@ namespace BloodPressureLogApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMicrocharts()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -18,6 +21,7 @@ namespace BloodPressureLogApp
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddAppPages();
 
             return builder.Build();
         }
