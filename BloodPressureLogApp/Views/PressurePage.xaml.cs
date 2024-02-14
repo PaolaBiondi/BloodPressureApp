@@ -5,18 +5,34 @@ namespace BloodPressureLogApp.Views;
 
 public partial class PressurePage : ContentPage
 {
-    public static ChartEntry[] entries = new[]
+    public static ChartEntry[] entriesSystolic = new[]
     {
-        new ChartEntry(212)
+        new ChartEntry(139)
         {
-            Label = "Android",
-            ValueLabel = "Value",
+            Label = "14-2-2024",
+            ValueLabel = "Date",
             Color = SKColor.Parse("#2c3e50")
         },
-         new ChartEntry(248)
+         new ChartEntry(160)
             {
-                Label = "Android",
-                ValueLabel = "648",
+                Label = "13-2-2024",
+                ValueLabel = "Date",
+                Color = SKColor.Parse("#77d065")
+            }
+    };
+
+    public static ChartEntry[] entriesDiastolic = new[]
+{
+        new ChartEntry(89)
+        {
+            Label = "14-2-2024",
+            ValueLabel = "Date",
+            Color = SKColor.Parse("#2c3e50")
+        },
+         new ChartEntry(85)
+            {
+                Label = "13-2-2024",
+                ValueLabel = "Date",
                 Color = SKColor.Parse("#77d065")
             }
     };
@@ -25,14 +41,18 @@ public partial class PressurePage : ContentPage
     {
         InitializeComponent();
 
-        chartView.Chart = new BarChart
+        chartSystolic.Chart = new BarChart
         {
-            Entries = entries,
-            ShowYAxisText = true,
+            Entries = entriesSystolic,
+            ShowYAxisText = true
         };
-        chartView1.Chart = new LineChart
+        chartDiastolic.Chart = new LineChart
         {
-            Entries = entries
+            Entries = entriesDiastolic,
+            LineMode = LineMode.Straight,
+            LineSize = 8,
+            PointMode = PointMode.Square,
+            PointSize = 18
         };
     }
 }

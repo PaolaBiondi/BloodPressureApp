@@ -6,9 +6,8 @@
              Title="Measured Pressure List">
     <ScrollView>
         <VerticalStackLayout>
-
-            <microC:ChartView x:Name="chartView" HeightRequest="500"></microC:ChartView>
-            <microC:ChartView x:Name="chartView1" HeightRequest="700" />
+            <microC:ChartView x:Name="chartSystolic" HeightRequest="500"></microC:ChartView>
+            <microC:ChartView x:Name="chartDiastolic" HeightRequest="700" />
         </VerticalStackLayout>
     </ScrollView>
 
