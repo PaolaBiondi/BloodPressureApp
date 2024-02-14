@@ -3,11 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BloodPressureLogApp.Views.PressurePage"
              xmlns:microC="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
-             Title="Measured Pressure List">
+             xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
+             x:DataType="vm:PressureLogViewModel"
+             Title="Heart Pressure Log">
     <ScrollView>
-        <VerticalStackLayout>
-            <microC:ChartView x:Name="chartSystolic" HeightRequest="500"></microC:ChartView>
-            <microC:ChartView x:Name="chartDiastolic" HeightRequest="700" />
+        <VerticalStackLayout Spacing="10" Margin="20, 10, 20, 0">
+            <Grid Padding="5"
+                  RowDefinitions="25, Auto, Auto, *"
+                  RowSpacing="5"
+                  ColumnSpacing="5"
+                  ColumnDefinitions=".75*, .25*">
+                <!-- ROW 0 -->
+                <Image Grid.ColumnSpan="2"
+                       Source="heart.png"
+                       BackgroundColor="Transparent">
+                </Image>
+                <!-- ROW 1 -->
+                <Frame Grid.Row="1">
+                    <Label Text="{Binding Threshold}"
+                           FontSize="12"
+                           VerticalOptions="Center"/>
+                </Frame>
+                <Button x:Name="btnChangePressureThreshold"
+                        Text="Change"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Command="{Binding EditPressureThresholdCommand}">
+                </Button>
+
+                <!-- ROW 2 -->
+                <microC:ChartView Grid.Row="2"
+                                  Grid.ColumnSpan="2"
+                                  x:Name="chartSystolic" 
+                                  HeightRequest="500"></microC:ChartView>
+
+                <!-- ROW 3 -->
+                <microC:ChartView Grid.Row="3"
+                                  Grid.ColumnSpan="2"
+                                  x:Name="chartDiastolic" HeightRequest="700" />
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 

@@ -1,3 +1,4 @@
+using BloodPressureLogApp.ViewModels;
 using Microcharts;
 using SkiaSharp;
 
@@ -5,54 +6,32 @@ namespace BloodPressureLogApp.Views;
 
 public partial class PressurePage : ContentPage
 {
-    public static ChartEntry[] entriesSystolic = new[]
-    {
-        new ChartEntry(139)
-        {
-            Label = "14-2-2024",
-            ValueLabel = "Date",
-            Color = SKColor.Parse("#2c3e50")
-        },
-         new ChartEntry(160)
-            {
-                Label = "13-2-2024",
-                ValueLabel = "Date",
-                Color = SKColor.Parse("#77d065")
-            }
-    };
+    private readonly PressureLogViewModel _pressureLogViewModel;
 
-    public static ChartEntry[] entriesDiastolic = new[]
-{
-        new ChartEntry(89)
-        {
-            Label = "14-2-2024",
-            ValueLabel = "Date",
-            Color = SKColor.Parse("#2c3e50")
-        },
-         new ChartEntry(85)
-            {
-                Label = "13-2-2024",
-                ValueLabel = "Date",
-                Color = SKColor.Parse("#77d065")
-            }
-    };
-
-    public PressurePage()
+    public PressurePage(PressureLogViewModel pressureLogViewModel)
     {
         InitializeComponent();
+        _pressureLogViewModel = pressureLogViewModel;
 
-        chartSystolic.Chart = new BarChart
+        this.BindingContext = _pressureLogViewModel ?? throw new ArgumentNullException(nameof(PressureLogViewModel));
+
+        chartSystolic.Chart = new LineChart
         {
-            Entries = entriesSystolic,
+            Entries = _pressureLogViewModel.entriesSystolic,
             ShowYAxisText = true
         };
         chartDiastolic.Chart = new LineChart
         {
-            Entries = entriesDiastolic,
+            Entries = _pressureLogViewModel.entriesDiastolic,
             LineMode = LineMode.Straight,
             LineSize = 8,
             PointMode = PointMode.Square,
             PointSize = 18
         };
+    }
+
+    private async void btnChangePressureThreshold_Clicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("Info", "Coming soon", "OK");
     }
 }

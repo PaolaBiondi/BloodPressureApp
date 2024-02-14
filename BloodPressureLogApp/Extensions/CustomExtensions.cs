@@ -1,4 +1,5 @@
-﻿using BloodPressureLogApp.Views;
+﻿using BloodPressureLogApp.ViewModels;
+using BloodPressureLogApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,10 @@ namespace BloodPressureLogApp.Extensions
     {
         public static IServiceCollection AddAppPages(this IServiceCollection services)
         {
-            return services.AddSingleton<PressurePage>();
+            services.AddSingleton<PressureLogViewModel>();
+            services.AddSingleton<PressurePage>();
+            services.AddSingleton<EditBloodThresholdPage>();
+            return services;
         }
 
     }

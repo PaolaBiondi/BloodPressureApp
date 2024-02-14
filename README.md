@@ -1,6 +1,7 @@
 # BloodPressureLogApp  
 ---
 ## Useful links  
+[.NET Examples](https://github.com/dotnet/maui-samples?tab=readme-ov-file)  
 [MicroCharts](https://www.youtube.com/watch?v=yMG8oPIuMig)  
 [MicroCharts Gerald's example github](https://github.com/jfversluis/MauiMicrochartsSample/)  
 
