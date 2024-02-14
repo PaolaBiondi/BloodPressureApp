@@ -5,29 +5,34 @@ namespace BloodPressureLogApp.Views;
 
 public partial class PressurePage : ContentPage
 {
-	ChartEntry[] entries = new[]
-	{
-		new ChartEntry(212)
-		{
-			Label = "Day1",
-			ValueLabel = "112",
-			Color = SKColor.Parse("#2c3e50")
-		},
-        new ChartEntry(248)
+    public static ChartEntry[] entries = new[]
+    {
+        new ChartEntry(212)
         {
-            Label = "Day2",
-            ValueLabel = "648",
+            Label = "Android",
+            ValueLabel = "Value",
             Color = SKColor.Parse("#2c3e50")
         },
+         new ChartEntry(248)
+            {
+                Label = "Android",
+                ValueLabel = "648",
+                Color = SKColor.Parse("#77d065")
+            }
     };
 
-	public PressurePage()
-	{
-		InitializeComponent();
-		chartPressure.Chart = new BarChart
+    public PressurePage()
+    {
+        InitializeComponent();
+
+        chartView.Chart = new BarChart
         {
-            BackgroundColor = SKColor.Parse("#DBBBEA"),
+            Entries = entries,
+            ShowYAxisText = true,
+        };
+        chartView1.Chart = new LineChart
+        {
             Entries = entries
         };
-	}
+    }
 }
