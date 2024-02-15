@@ -11,7 +11,7 @@ namespace BloodPressure.Domain.Models
         public int Id { get; set; }
         public int Systolic {  get; set; }
         public int Diastolic { get; set; }
-        public DateTimeOffset Measured { get; set; }
+        public DateTimeOffset Measured { get; set; } = DateTimeOffset.Now;
         public DateTimeOffset Created { get; set; } = DateTimeOffset.Now;
     }
 }

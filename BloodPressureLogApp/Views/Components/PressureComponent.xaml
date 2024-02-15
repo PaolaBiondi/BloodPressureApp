@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
+             x:DataType="vm:PressureViewModel"
+             x:Class="BloodPressureLogApp.Views.Components.PressureComponent">
+    <ContentView.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+    </ContentView.Resources>
+
+    <VerticalStackLayout Spacing="10" Margin="20, 10, 20, 0">
+        <Frame Padding="10, 2, 10, 2">
+            <HorizontalStackLayout>
+                <Label Text="Systolic [mmHg]" VerticalOptions="Center" WidthRequest="100"></Label>
+                <Entry x:Name="entrySystolic" Text="{Binding Pressure.Systolic}" 
+                   VerticalOptions="Center"
+                   Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <toolkit:NumericValidationBehavior
+                                x:Name="systolicValidator"
+                                InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                Flags="ValidateOnValueChanged"
+                                MinimumValue="100"
+                                MaximumValue="180"
+                                IsValid="{Binding IsSystolicProvided}"
+                                />
+                    </Entry.Behaviors>
+                </Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10, 2, 10, 2">
+            <HorizontalStackLayout>
+                <Label Text="Diastolic [mmHg]" VerticalOptions="Center" WidthRequest="100"></Label>
+                <Entry x:Name="entryDiastolic" Text="{Binding Pressure.Diastolic}" 
+                   VerticalOptions="Center"
+                   Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <toolkit:NumericValidationBehavior
+                                x:Name="diastolicValidator"
+                                InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                Flags="ValidateOnValueChanged"
+                                MinimumValue="50"
+                                MaximumValue="100"
+                                IsValid="{Binding IsDiastolicProvided}"
+                                />
+                    </Entry.Behaviors>
+                </Entry>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame Padding="10, 2, 10, 2">
+            <HorizontalStackLayout>
+                <Label Text="Date of measurement" VerticalOptions="Center" WidthRequest="100"></Label>
+                <DatePicker MinimumDate="{Binding MinDate}"
+                            MaximumDate="12/31/2022"
+                            Date="{Binding Pressure.Measured}"
+                            VerticalOptions="Center">
+                    
+                </DatePicker>
+                <TimePicker Time="{Binding MeasuredTime}"
+                            VerticalOptions="Center">
+                </TimePicker>
+            </HorizontalStackLayout>
+        </Frame>
+        <Button x:Name="btnSave" Text="Save"></Button>
+        <Button x:Name="btnCancel" Text="Cancel" Command="{Binding CancelCommand}"></Button>
+    </VerticalStackLayout>
+</ContentView>

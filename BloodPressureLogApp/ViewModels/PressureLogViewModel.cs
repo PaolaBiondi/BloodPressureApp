@@ -45,7 +45,6 @@ namespace BloodPressureLogApp.ViewModels
                     Color = SKColor.Parse("#77d065")
                 }
         };
-        private uint counter = 1;
 
         [ObservableProperty]
         ObservableCollection<Pressure> bloodPressure = new ObservableCollection<Pressure>()

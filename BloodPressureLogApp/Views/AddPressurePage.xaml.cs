@@ -1,14 +1,16 @@
+using BloodPressureLogApp.ViewModels;
+
 namespace BloodPressureLogApp.Views;
 
 public partial class AddPressurePage : ContentPage
 {
-	public AddPressurePage()
+    private readonly PressureViewModel _pressureViewModel;
+
+    public AddPressurePage(PressureViewModel pressureViewModel)
 	{
 		InitializeComponent();
-	}
-
-    private async void btnCancel_Clicked(object sender, EventArgs e)
-    {
-		await AppShell.Current.GoToAsync("..");
+        _pressureViewModel = pressureViewModel;
+        //_pressureViewModel.ToHideKeyboard = 
+        this.BindingContext = _pressureViewModel;
     }
 }

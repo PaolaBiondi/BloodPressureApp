@@ -85,6 +85,9 @@
 	  <MauiXaml Update="Views\Components\BloodPressureComponent.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\PressureComponent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\EditBloodThresholdPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

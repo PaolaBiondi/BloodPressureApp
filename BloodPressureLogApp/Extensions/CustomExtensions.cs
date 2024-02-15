@@ -13,11 +13,14 @@ namespace BloodPressureLogApp.Extensions
     {
         public static IServiceCollection AddAppPages(this IServiceCollection services)
         {
-            services.AddSingleton<PressureLogViewModel>();
             services.AddSingleton<PressurePage>();
             services.AddSingleton<EditBloodThresholdPage>();
             services.AddTransient<AddPressurePage>();
             services.AddSingleton<EditPressurePage>();
+
+            services.AddSingleton<PressureLogViewModel>();
+            services.AddTransient<PressureViewModel>();
+
             return services;
         }
 
