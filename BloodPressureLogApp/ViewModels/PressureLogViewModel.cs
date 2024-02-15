@@ -5,6 +5,7 @@ using Microcharts;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,12 +48,49 @@ namespace BloodPressureLogApp.ViewModels
         private uint counter = 1;
 
         [ObservableProperty]
+        ObservableCollection<Pressure> bloodPressure = new ObservableCollection<Pressure>();
+
+        [ObservableProperty]
         string threshold = "Normal blood pressure 130/80";
+
+        string? filterText;
+        public string? FilterText
+        {
+            get => filterText;
+            set
+            {
+                filterText = value;
+                LoadPressureAsync(value);
+            }
+        }
 
         [RelayCommand]
         public async Task EditPressureThreshold()
         {
             await AppShell.Current.GoToAsync(nameof(EditBloodThresholdPage));
+        }
+
+        [RelayCommand]
+        public async Task Delete(int id)
+        {
+            // TODO
+        }
+
+        [RelayCommand]
+        public async Task Edit(int id)
+        {
+            // TODO
+        }
+
+        [RelayCommand]
+        public async Task Add()
+        {
+            // TODO
+        }
+
+        private async Task LoadPressureAsync(string? filterText = null)
+        {
+            // TODO
         }
     }
 }

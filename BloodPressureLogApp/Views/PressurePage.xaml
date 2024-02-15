@@ -3,46 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BloodPressureLogApp.Views.PressurePage"
              xmlns:microC="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:m="clr-namespace:BloodPressure.Domain.Models;assembly=BloodPressure.Domain"
              xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
              x:DataType="vm:PressureLogViewModel"
              Title="Heart Pressure Log">
     <ScrollView>
-        <VerticalStackLayout Spacing="10" Margin="20, 10, 20, 0">
-            <Grid Padding="5"
-                  RowDefinitions="25, Auto, Auto, *"
+        <Grid Padding="5"
+                  RowDefinitions="25, Auto, Auto, Auto, 50, *, 50 "
                   RowSpacing="5"
                   ColumnSpacing="5"
                   ColumnDefinitions=".75*, .25*">
-                <!-- ROW 0 -->
-                <Image Grid.ColumnSpan="2"
+            <!-- ROW 0 -->
+            <Image Grid.ColumnSpan="2"
                        Source="heart.png"
                        BackgroundColor="Transparent">
-                </Image>
-                <!-- ROW 1 -->
-                <Frame Grid.Row="1">
-                    <Label Text="{Binding Threshold}"
+            </Image>
+            <!-- ROW 1 -->
+            <Frame Grid.Row="1">
+                <Label Text="{Binding Threshold}"
                            FontSize="12"
                            VerticalOptions="Center"/>
-                </Frame>
-                <Button x:Name="btnChangePressureThreshold"
+            </Frame>
+            <Button x:Name="btnChangePressureThreshold"
                         Text="Change"
                         Grid.Row="1"
                         Grid.Column="1"
                         Command="{Binding EditPressureThresholdCommand}">
-                </Button>
+            </Button>
 
-                <!-- ROW 2 -->
-                <microC:ChartView Grid.Row="2"
+            <!-- ROW 2 -->
+            <microC:ChartView Grid.Row="2"
                                   Grid.ColumnSpan="2"
                                   x:Name="chartSystolic" 
-                                  HeightRequest="500"></microC:ChartView>
+                                  HeightRequest="100"></microC:ChartView>
 
-                <!-- ROW 3 -->
-                <microC:ChartView Grid.Row="3"
+            <!-- ROW 3 -->
+            <microC:ChartView Grid.Row="3"
                                   Grid.ColumnSpan="2"
-                                  x:Name="chartDiastolic" HeightRequest="700" />
-            </Grid>
-        </VerticalStackLayout>
+                                  x:Name="chartDiastolic" HeightRequest="100" />
+            <!-- ROW 4 -->
+            <SearchBar
+                    x:Name="SearchBar"
+                    Placeholder="Search"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding FilterText}">
+            </SearchBar>
+
+            <!-- ROW 5 -->
+            <CollectionView Grid.Row="5"
+                                Grid.ColumnSpan="2"
+                                ItemsSource="{Binding BloodPressure}"
+                                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Pressure">
+                        <StackLayout>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItem Text="Delete"
+                                           IsDestructive="True"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
+                                           CommandParameter="{Binding Id}">
+                                    </SwipeItem>
+                                    <SwipeItem Text="Edit"
+                                           BackgroundColor="Green"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
+                                           CommandParameter="{Binding Id}">
+                                    </SwipeItem>
+                                </SwipeView.RightItems>
+                                <StackLayout>
+                                    <Frame Margin="0,5,0,5">
+                                        <StackLayout Orientation="Vertical" Spacing="5">
+                                            <Label Text="mmHg"></Label>
+                                            <Label Text="{Binding Systolic}"></Label>
+                                            <Label Text="{Binding Diastolic}"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+            <!-- ROW 6 -->
+            <Button x:Name="btnAdd" 
+                    Text="Add Measurement"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding AddCommand}">
+            </Button>
+        </Grid>
     </ScrollView>
 
 </ContentPage>

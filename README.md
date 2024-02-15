@@ -2,6 +2,7 @@
 ---
 ## Useful links  
 [.NET Examples](https://github.com/dotnet/maui-samples?tab=readme-ov-file)  
+[ MAUI Behavior toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/numeric-validation-behavior#using-the-numericvalidationbehavior)  
 [MicroCharts](https://www.youtube.com/watch?v=yMG8oPIuMig)  
 [MicroCharts Gerald's example github](https://github.com/jfversluis/MauiMicrochartsSample/)  
 
