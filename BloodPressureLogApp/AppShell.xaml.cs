@@ -9,6 +9,8 @@ namespace BloodPressureLogApp
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(EditBloodThresholdPage), typeof(EditBloodThresholdPage));
+            Routing.RegisterRoute(nameof(AddPressurePage), typeof(AddPressurePage));
+            Routing.RegisterRoute(nameof(EditPressurePage), typeof (EditPressurePage));
         }
     }
 }

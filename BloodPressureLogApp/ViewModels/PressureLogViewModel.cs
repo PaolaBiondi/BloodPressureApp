@@ -48,7 +48,16 @@ namespace BloodPressureLogApp.ViewModels
         private uint counter = 1;
 
         [ObservableProperty]
-        ObservableCollection<Pressure> bloodPressure = new ObservableCollection<Pressure>();
+        ObservableCollection<Pressure> bloodPressure = new ObservableCollection<Pressure>()
+        {
+            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 80,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            }
+        };
 
         [ObservableProperty]
         string threshold = "Normal blood pressure 130/80";
@@ -79,13 +88,13 @@ namespace BloodPressureLogApp.ViewModels
         [RelayCommand]
         public async Task Edit(int id)
         {
-            // TODO
+            await AppShell.Current.GoToAsync(nameof(EditPressurePage));
         }
 
         [RelayCommand]
         public async Task Add()
         {
-            // TODO
+            await AppShell.Current.GoToAsync(nameof(AddPressurePage));
         }
 
         private async Task LoadPressureAsync(string? filterText = null)

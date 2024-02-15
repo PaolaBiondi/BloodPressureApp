@@ -1,5 +1,6 @@
 ﻿using BloodPressureLogApp.ViewModels;
 using BloodPressureLogApp.Views;
+using CommunityToolkit.Maui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace BloodPressureLogApp.Extensions
             services.AddSingleton<PressureLogViewModel>();
             services.AddSingleton<PressurePage>();
             services.AddSingleton<EditBloodThresholdPage>();
+            services.AddTransient<AddPressurePage>();
+            services.AddSingleton<EditPressurePage>();
             return services;
         }
 
