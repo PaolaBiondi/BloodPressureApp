@@ -14,6 +14,12 @@ namespace BloodPressureLogApp.ViewModels
 {
     public partial class PressureLogViewModel : ObservableObject
     {
+        public PressureLogViewModel(Threshold threshold)
+        {
+            _threshold = threshold;
+            this.threshold = $"Normal blood pressure {_threshold.Systolic}/{_threshold.Diastolic}";
+        }
+
         public ChartEntry[] entriesSystolic = new[]
         {
             new ChartEntry(139)
@@ -59,9 +65,11 @@ namespace BloodPressureLogApp.ViewModels
         };
 
         [ObservableProperty]
-        string threshold = "Normal blood pressure 130/80";
+        string threshold = string.Empty;
 
         string? filterText;
+        private readonly Threshold _threshold;
+
         public string? FilterText
         {
             get => filterText;

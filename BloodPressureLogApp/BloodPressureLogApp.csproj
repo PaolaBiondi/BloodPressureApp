@@ -64,6 +64,7 @@
 	  <None Remove="Resources\AppIcon\appiconfg.svg" />
 	  <None Remove="Resources\Fonts\fontello.ttf" />
 	  <None Remove="Resources\Images\heart.png" />
+	  <None Remove="Resources\Raw\threshold.json" />
 	</ItemGroup>
 
 	<ItemGroup>
