@@ -65,11 +65,23 @@
                                            BackgroundColor="Red"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
                                            CommandParameter="{Binding Id}">
+                                        <SwipeItem.IconImageSource>
+                                            <FontImageSource FontFamily="Icons"
+                                                                     Glyph="&#xE801;"
+                                                                     Size="50">
+                                            </FontImageSource>
+                                        </SwipeItem.IconImageSource>
                                     </SwipeItem>
                                     <SwipeItem Text="Edit"
                                            BackgroundColor="Green"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
                                            CommandParameter="{Binding Id}">
+                                        <SwipeItem.IconImageSource>
+                                            <FontImageSource FontFamily="Icons"
+                                                                     Glyph="&#xE802;"
+                                                                     Size="50">
+                                            </FontImageSource>
+                                        </SwipeItem.IconImageSource>
                                     </SwipeItem>
                                 </SwipeView.RightItems>
                                 <StackLayout>
