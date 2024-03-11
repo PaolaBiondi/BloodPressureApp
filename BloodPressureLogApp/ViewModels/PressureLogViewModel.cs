@@ -53,16 +53,17 @@ namespace BloodPressureLogApp.ViewModels
         };
 
         [ObservableProperty]
-        ObservableCollection<Pressure> bloodPressure = new ObservableCollection<Pressure>()
-        {
-            new Pressure
-            {
-                Id= 1,
-                Systolic = 130,
-                Diastolic = 80,
-                Measured = DateTimeOffset.Now.AddDays(-14)
-            }
-        };
+        ObservableCollection<Pressure>? bloodPressure = null;
+        //    new ObservableCollection<Pressure>()
+        //{
+        //    new Pressure
+        //    {
+        //        Id= 1,
+        //        Systolic = 130,
+        //        Diastolic = 80,
+        //        Measured = DateTimeOffset.Now.AddDays(-14)
+        //    }
+        //};
 
         [ObservableProperty]
         string threshold = string.Empty;

@@ -97,6 +97,21 @@
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Grid>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image HeightRequest="150"
+                                   Source="notfound.png"
+                                   VerticalOptions="Center">
+                            </Image>
+                            <Label FontAttributes="Bold"
+                                   FontSize="Large"
+                                   HorizontalTextAlignment="Center"
+                                   Text="No measurements">
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </CollectionView.EmptyView>
 
             </CollectionView>
             <!-- ROW 6 -->
