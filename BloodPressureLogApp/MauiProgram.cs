@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui;
 using Microcharts.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace BloodPressureLogApp
 {
@@ -13,6 +14,7 @@ namespace BloodPressureLogApp
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseSkiaSharp()
                 .UseMicrocharts()
                 .ConfigureFonts(fonts =>
                 {

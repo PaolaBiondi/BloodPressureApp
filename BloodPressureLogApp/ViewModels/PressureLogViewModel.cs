@@ -53,17 +53,54 @@ namespace BloodPressureLogApp.ViewModels
         };
 
         [ObservableProperty]
-        ObservableCollection<Pressure>? bloodPressure = null;
-        //    new ObservableCollection<Pressure>()
-        //{
-        //    new Pressure
-        //    {
-        //        Id= 1,
-        //        Systolic = 130,
-        //        Diastolic = 80,
-        //        Measured = DateTimeOffset.Now.AddDays(-14)
-        //    }
-        //};
+        ObservableCollection<Pressure>? bloodPressure = //null;
+            new ObservableCollection<Pressure>()
+        {
+            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 80,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },
+                        new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 70,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 60,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 50,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 40,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 30,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },            new Pressure
+            {
+                Id= 1,
+                Systolic = 130,
+                Diastolic = 20,
+                Measured = DateTimeOffset.Now.AddDays(-14)
+            },
+        };
 
         [ObservableProperty]
         string threshold = string.Empty;

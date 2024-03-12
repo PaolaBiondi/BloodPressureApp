@@ -5,123 +5,130 @@
              xmlns:microC="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              xmlns:m="clr-namespace:BloodPressure.Domain.Models;assembly=BloodPressure.Domain"
              xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="vm:PressureLogViewModel"
              Title="Heart Pressure Log">
-        <RefreshView>
-            <Grid Padding="5"
-                  RowDefinitions="25, Auto, Auto, Auto, 50, *, 50 "
+    <RefreshView>
+        <Grid Padding="5"
+                  RowDefinitions="0.2*, Auto, Auto, Auto, 50, *, 50 "
                   RowSpacing="5"
                   ColumnSpacing="5"
                   ColumnDefinitions=".75*, .25*">
-                <!-- ROW 0 -->
-                <Image Grid.ColumnSpan="2"
+            <!-- ROW 0 -->
+            <skia:SKLottieView Grid.ColumnSpan="2" 
+                               RepeatCount="-1" 
+                               Source="heartbeat.json">
+                
+            </skia:SKLottieView>
+                
+                <!--<Image Grid.ColumnSpan="2"
                        Source="heart.png"
-                       BackgroundColor="Transparent">
-                </Image>
-                <!-- ROW 1 -->
-                <Frame Grid.Row="1">
-                    <Label Text="{Binding Threshold}"
+                       BackgroundColor="Transparent">-->
+            <!--</Image>-->
+            <!-- ROW 1 -->
+            <Frame Grid.Row="1">
+                <Label Text="{Binding Threshold}"
                            FontSize="12"
                            VerticalOptions="Center"/>
-                </Frame>
-                <Button x:Name="btnChangePressureThreshold"
+            </Frame>
+            <Button x:Name="btnChangePressureThreshold"
                         Text="Change"
                         Grid.Row="1"
                         Grid.Column="1"
                         Command="{Binding EditPressureThresholdCommand}">
-                </Button>
+            </Button>
 
-                <!-- ROW 2 -->
-                <microC:ChartView Grid.Row="2"
+            <!-- ROW 2 -->
+            <microC:ChartView Grid.Row="2"
                                   Grid.ColumnSpan="2"
                                   x:Name="chartSystolic" 
                                   HeightRequest="100"></microC:ChartView>
 
-                <!-- ROW 3 -->
-                <microC:ChartView Grid.Row="3"
+            <!-- ROW 3 -->
+            <microC:ChartView Grid.Row="3"
                                   Grid.ColumnSpan="2"
                                   x:Name="chartDiastolic" HeightRequest="100" />
-                <!-- ROW 4 -->
-                <SearchBar
+            <!-- ROW 4 -->
+            <SearchBar
                     x:Name="SearchBar"
                     Placeholder="Search"
                     Grid.Row="4"
                     Grid.ColumnSpan="2"
                     Text="{Binding FilterText}">
-                </SearchBar>
+            </SearchBar>
 
-                <!-- ROW 5 -->
-                <CollectionView Grid.Row="5"
+            <!-- ROW 5 -->
+            <CollectionView Grid.Row="5"
                                 Grid.ColumnSpan="2"
                                 ItemsSource="{Binding BloodPressure}"
                                 SelectionMode="None">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="m:Pressure">
-                            <StackLayout>
-                                <SwipeView>
-                                    <SwipeView.RightItems>
-                                        <SwipeItem Text="Delete"
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Pressure">
+                        <StackLayout>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItem Text="Delete"
                                            IsDestructive="True"
                                            BackgroundColor="Red"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
                                            CommandParameter="{Binding Id}">
-                                            <SwipeItem.IconImageSource>
-                                                <FontImageSource FontFamily="Icons"
+                                        <SwipeItem.IconImageSource>
+                                            <FontImageSource FontFamily="Icons"
                                                                      Glyph="&#xE801;"
                                                                      Size="50">
-                                                </FontImageSource>
-                                            </SwipeItem.IconImageSource>
-                                        </SwipeItem>
-                                        <SwipeItem Text="Edit"
+                                            </FontImageSource>
+                                        </SwipeItem.IconImageSource>
+                                    </SwipeItem>
+                                    <SwipeItem Text="Edit"
                                            BackgroundColor="Green"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
                                            CommandParameter="{Binding Id}">
-                                            <SwipeItem.IconImageSource>
-                                                <FontImageSource FontFamily="Icons"
+                                        <SwipeItem.IconImageSource>
+                                            <FontImageSource FontFamily="Icons"
                                                                      Glyph="&#xE802;"
                                                                      Size="50">
-                                                </FontImageSource>
-                                            </SwipeItem.IconImageSource>
-                                        </SwipeItem>
-                                    </SwipeView.RightItems>
-                                    <StackLayout>
-                                        <Frame Margin="0,5,0,5">
-                                            <StackLayout Orientation="Vertical" Spacing="5">
-                                                <Label Text="mmHg"></Label>
-                                                <Label Text="{Binding Systolic}"></Label>
-                                                <Label Text="{Binding Diastolic}"></Label>
-                                            </StackLayout>
-                                        </Frame>
-                                    </StackLayout>
-                                </SwipeView>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    <CollectionView.EmptyView>
-                        <Grid>
-                            <VerticalStackLayout VerticalOptions="Center">
-                                <Image HeightRequest="150"
+                                            </FontImageSource>
+                                        </SwipeItem.IconImageSource>
+                                    </SwipeItem>
+                                </SwipeView.RightItems>
+                                <StackLayout>
+                                    <Frame Margin="0,5,0,5">
+                                        <StackLayout Orientation="Vertical" Spacing="5">
+                                            <Label Text="{Binding Systolic, StringFormat='{0} mmHg'}"></Label>
+                                            <Label Text="{Binding Diastolic, StringFormat='{0} mmHg'}"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Grid>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image HeightRequest="150"
                                    Source="notfound.png"
                                    VerticalOptions="Center">
-                                </Image>
-                                <Label FontAttributes="Bold"
+                            </Image>
+                            <Label FontAttributes="Bold"
                                    FontSize="Large"
                                    HorizontalTextAlignment="Center"
                                    Text="No measurements">
-                                </Label>
-                            </VerticalStackLayout>
-                        </Grid>
-                    </CollectionView.EmptyView>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </CollectionView.EmptyView>
 
-                </CollectionView>
-                <!-- ROW 6 -->
-                <Button x:Name="btnAdd" 
+            </CollectionView>
+            <!-- ROW 6 -->
+            <Button x:Name="btnAdd" 
                     Text="Add Measurement"
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
+                    CornerRadius="15"
                     Command="{Binding AddCommand}">
-                </Button>
-            </Grid>
-        </RefreshView>
+            </Button>
+        </Grid>
+    </RefreshView>
 
 </ContentPage>
