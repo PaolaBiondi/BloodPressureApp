@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BloodPressureLogApp.Views.PressurePage"
-             xmlns:microC="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              xmlns:m="clr-namespace:BloodPressure.Domain.Models;assembly=BloodPressure.Domain"
              xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
@@ -10,18 +9,17 @@
              Title="Heart Pressure Log">
     <RefreshView>
         <Grid Padding="5"
-                  RowDefinitions="0.2*, Auto, Auto, Auto, 50, *, 50 "
+                  RowDefinitions="0.2*, Auto, 50, *, 50 "
                   RowSpacing="5"
                   ColumnSpacing="5"
                   ColumnDefinitions=".75*, .25*">
             <!-- ROW 0 -->
             <skia:SKLottieView Grid.ColumnSpan="2" 
-                               RepeatCount="-1" 
+                               RepeatCount="-1"
                                Source="heartbeat.json">
-                
+
             </skia:SKLottieView>
-                
-                <!--<Image Grid.ColumnSpan="2"
+            <!--<Image Grid.ColumnSpan="2"
                        Source="heart.png"
                        BackgroundColor="Transparent">-->
             <!--</Image>-->
@@ -37,28 +35,17 @@
                         Grid.Column="1"
                         Command="{Binding EditPressureThresholdCommand}">
             </Button>
-
             <!-- ROW 2 -->
-            <microC:ChartView Grid.Row="2"
-                                  Grid.ColumnSpan="2"
-                                  x:Name="chartSystolic" 
-                                  HeightRequest="100"></microC:ChartView>
-
-            <!-- ROW 3 -->
-            <microC:ChartView Grid.Row="3"
-                                  Grid.ColumnSpan="2"
-                                  x:Name="chartDiastolic" HeightRequest="100" />
-            <!-- ROW 4 -->
             <SearchBar
                     x:Name="SearchBar"
                     Placeholder="Search"
-                    Grid.Row="4"
+                    Grid.Row="2"
                     Grid.ColumnSpan="2"
                     Text="{Binding FilterText}">
             </SearchBar>
 
-            <!-- ROW 5 -->
-            <CollectionView Grid.Row="5"
+            <!-- ROW 3 -->
+            <CollectionView Grid.Row="3"
                                 Grid.ColumnSpan="2"
                                 ItemsSource="{Binding BloodPressure}"
                                 SelectionMode="None">
@@ -66,7 +53,7 @@
                     <DataTemplate x:DataType="m:Pressure">
                         <StackLayout>
                             <SwipeView>
-                                <SwipeView.RightItems>
+                                <SwipeView.LeftItems>
                                     <SwipeItem Text="Delete"
                                            IsDestructive="True"
                                            BackgroundColor="Red"
@@ -90,10 +77,11 @@
                                             </FontImageSource>
                                         </SwipeItem.IconImageSource>
                                     </SwipeItem>
-                                </SwipeView.RightItems>
+                                </SwipeView.LeftItems>
                                 <StackLayout>
                                     <Frame Margin="0,5,0,5">
                                         <StackLayout Orientation="Vertical" Spacing="5">
+                                            <Label Style="{StaticResource DateTitle}" Text="{Binding Measured, StringFormat='{0:G}'}"></Label>
                                             <Label Text="{Binding Systolic, StringFormat='{0} mmHg'}"></Label>
                                             <Label Text="{Binding Diastolic, StringFormat='{0} mmHg'}"></Label>
                                         </StackLayout>
@@ -120,10 +108,10 @@
                 </CollectionView.EmptyView>
 
             </CollectionView>
-            <!-- ROW 6 -->
+            <!-- ROW 4 -->
             <Button x:Name="btnAdd" 
                     Text="Add Measurement"
-                    Grid.Row="6"
+                    Grid.Row="4"
                     Grid.ColumnSpan="2"
                     CornerRadius="15"
                     Command="{Binding AddCommand}">
