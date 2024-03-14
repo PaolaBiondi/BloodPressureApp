@@ -10,7 +10,6 @@ public partial class AddPressurePage : ContentPage
 	{
 		InitializeComponent();
         _pressureViewModel = pressureViewModel;
-        //_pressureViewModel.ToHideKeyboard = 
         this.BindingContext = _pressureViewModel;
     }
 }

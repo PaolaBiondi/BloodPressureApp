@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using BloodPressure.Domain.UseCases;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,34 @@ namespace BloodPressureLogApp.ViewModels
 {
     public partial class PressureViewModel : ObservableObject
     {
+        public PressureViewModel(IAddPressureUseCase addPressureUseCase, IViewPressureUseCase viewPressureUseCase)
+        {
+            _addPressureUseCase = addPressureUseCase;
+            _viewPressureUseCase = viewPressureUseCase;
+        }
 
         public Action? ToHideKeyboard = null;
 
         [ObservableProperty]
-        Pressure? pressure = new();
+        Pressure? pressure = new() { Measured = DateTimeOffset.Now};
+        
+        private readonly IAddPressureUseCase _addPressureUseCase;
+        private readonly IViewPressureUseCase _viewPressureUseCase;
 
         public DateTime MinDate { get; set; } = DateTime.Now.AddYears(-30);
         public DateTime MaxDate { get; set; } = DateTime.Now;
-        public TimeOnly MeasuredTime { get; set; } = TimeOnly.FromDateTime(DateTime.Now);
+        public TimeSpan MeasuredTime { get; set; } = DateTimeOffset.Now.TimeOfDay;
         public bool IsSystolicProvided { get; set; }
         public bool IsDiastolicProvided { get; set; }
 
         [RelayCommand]
         public async Task Add()
         {
-            if (!(await ValidateContact()))
+            if (!(await ValidatePressure()))
                 return;
+
+            await _addPressureUseCase.ExecuteAsync(this.Pressure!);
+            await Shell.Current.GoToAsync("..");
 
             await OnClose();
         }
@@ -34,9 +46,10 @@ namespace BloodPressureLogApp.ViewModels
         [RelayCommand]
         public async Task Save()
         {
-            if (!(await ValidateContact()))
+            if (!(await ValidatePressure()))
                 return;
-            // TODO save to DB 
+
+            await _viewPressureUseCase.UpdateAsync(this.Pressure!);
 
             await OnClose();
         }
@@ -53,7 +66,7 @@ namespace BloodPressureLogApp.ViewModels
             await AppShell.Current.GoToAsync("..");
         }
 
-        private async Task<bool> ValidateContact()
+        private async Task<bool> ValidatePressure()
         {
             if (!IsSystolicProvided)
             {
@@ -68,6 +81,11 @@ namespace BloodPressureLogApp.ViewModels
             }
 
             return true;
+        }
+
+        public async Task LoadPressure(int id)
+        {
+            this.Pressure = await _viewPressureUseCase.ExecuteAsync(id);
         }
 
         private async Task DisplayMessage(string message)

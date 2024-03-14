@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BloodPressureLogApp.Views.EditPressurePage"
-             Title="EditPressurePage">
-    <VerticalStackLayout>
-        <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"></Button>
-    </VerticalStackLayout>
+             xmlns:components="clr-namespace:BloodPressureLogApp.Views.Components"
+             Title="Edit pressure">
+    <components:PressureComponent IsEdit="True"
+                                      x:Name="editPressure"
+                                      BindingContext="{Binding .}">
+    </components:PressureComponent>
 </ContentPage>

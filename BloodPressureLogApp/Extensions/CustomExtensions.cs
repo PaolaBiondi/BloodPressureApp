@@ -1,4 +1,8 @@
-﻿using BloodPressureLogApp.ViewModels;
+﻿using BloodPressure.Domain.Repositories;
+using BloodPressure.Domain.UseCases;
+using BloodPressure.Infrastructure.Persistence.EFC.SQLite;
+using BloodPressure.UseCases;
+using BloodPressureLogApp.ViewModels;
 using BloodPressureLogApp.Views;
 using CommunityToolkit.Maui;
 using System;
@@ -16,6 +20,8 @@ namespace BloodPressureLogApp.Extensions
         {
             services.AddSingleton(LoadMauiAsset().Result);
 
+            services.AddTransient<IPressureRepository, PressureRepository>();
+
             services.AddSingleton<PressurePage>();
             services.AddSingleton<EditBloodThresholdPage>();
             services.AddTransient<AddPressurePage>();
@@ -23,6 +29,10 @@ namespace BloodPressureLogApp.Extensions
 
             services.AddSingleton<PressureLogViewModel>();
             services.AddTransient<PressureViewModel>();
+
+            services.AddSingleton<IViewBloodPressuresUseCase, ViewBloodPressuresUseCase>();
+            services.AddTransient<IAddPressureUseCase, AddPressureUseCase>();
+            services.AddTransient<IViewPressureUseCase, ViewPressureUseCase>();
 
             return services;
         }

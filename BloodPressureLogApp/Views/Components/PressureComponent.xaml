@@ -54,15 +54,21 @@
             <HorizontalStackLayout>
                 <Label Text="Date of measurement" VerticalOptions="Center" WidthRequest="100"></Label>
                 <DatePicker MinimumDate="{Binding MinDate}"
-                            MaximumDate="12/31/2022"
+                            MaximumDate="{Binding MaxDate}"
                             Date="{Binding Pressure.Measured}"
                             VerticalOptions="Center">
-                    
+
                 </DatePicker>
                 <TimePicker Time="{Binding MeasuredTime}"
                             VerticalOptions="Center">
                 </TimePicker>
             </HorizontalStackLayout>
+        </Frame>
+        <Frame>
+            <VerticalStackLayout>
+                <Label Text="Note: " HorizontalOptions="Start"></Label>
+                <Editor AutoSize="TextChanges" Text="{Binding Pressure.Note}"></Editor>
+            </VerticalStackLayout>
         </Frame>
         <Button x:Name="btnSave" Text="Save"></Button>
         <Button x:Name="btnCancel" Text="Cancel" Command="{Binding CancelCommand}"></Button>

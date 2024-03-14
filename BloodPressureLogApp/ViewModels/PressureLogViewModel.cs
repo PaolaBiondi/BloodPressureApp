@@ -1,7 +1,7 @@
-﻿using BloodPressureLogApp.Views;
+﻿using BloodPressure.Domain.UseCases;
+using BloodPressureLogApp.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microcharts;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -14,43 +14,12 @@ namespace BloodPressureLogApp.ViewModels
 {
     public partial class PressureLogViewModel : ObservableObject
     {
-        public PressureLogViewModel(Threshold threshold)
+        public PressureLogViewModel(Threshold threshold, IViewBloodPressuresUseCase viewBloodPressuresUseCase)
         {
             _threshold = threshold;
+            _viewBloodPressuresUseCase = viewBloodPressuresUseCase;
             this.threshold = $"Normal blood pressure {_threshold.Systolic}/{_threshold.Diastolic}";
         }
-
-        public ChartEntry[] entriesSystolic = new[]
-        {
-            new ChartEntry(139)
-            {
-                Label = "14-2-2024",
-                ValueLabel = "Date",
-                Color = SKColor.Parse("#2c3e50")
-            },
-             new ChartEntry(160)
-                {
-                    Label = "13-2-2024",
-                    ValueLabel = "Date",
-                    Color = SKColor.Parse("#77d065")
-                }
-        };
-
-        public ChartEntry[] entriesDiastolic = new[]
-        {
-            new ChartEntry(89)
-            {
-                Label = "14-2-2024",
-                ValueLabel = "Date",
-                Color = SKColor.Parse("#2c3e50")
-            },
-             new ChartEntry(85)
-                {
-                    Label = "13-2-2024",
-                    ValueLabel = "Date",
-                    Color = SKColor.Parse("#77d065")
-                }
-        };
 
         [ObservableProperty]
         ObservableCollection<Pressure>? bloodPressure = //null;
@@ -107,6 +76,7 @@ namespace BloodPressureLogApp.ViewModels
 
         string? filterText;
         private readonly Threshold _threshold;
+        private readonly IViewBloodPressuresUseCase _viewBloodPressuresUseCase;
 
         public string? FilterText
         {
@@ -127,13 +97,15 @@ namespace BloodPressureLogApp.ViewModels
         [RelayCommand]
         public async Task Delete(int id)
         {
-            // TODO
+            await _viewBloodPressuresUseCase.DeleteAsync(id);
+            await LoadPressureAsync();
         }
 
         [RelayCommand]
         public async Task Edit(int id)
         {
-            await AppShell.Current.GoToAsync(nameof(EditPressurePage));
+            await AppShell.Current.GoToAsync($"{nameof(EditPressurePage)}?Id={id}");
+
         }
 
         [RelayCommand]
@@ -142,9 +114,18 @@ namespace BloodPressureLogApp.ViewModels
             await AppShell.Current.GoToAsync(nameof(AddPressurePage));
         }
 
-        private async Task LoadPressureAsync(string? filterText = null)
+        public async Task LoadPressureAsync(string? filterText = null)
         {
-            // TODO
+            this.BloodPressure?.Clear();
+            var list = await _viewBloodPressuresUseCase.ExecuteAsync(filterText);
+            if (list is not null)
+            {
+                foreach (var item in list)
+                {
+                    this.BloodPressure ??= new ObservableCollection<Pressure>();
+                    this.BloodPressure.Add(item);
+                }
+            }
         }
     }
 }

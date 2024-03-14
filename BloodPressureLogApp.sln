@@ -10,7 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodPressure.Domain", "BloodPressure.Domain\BloodPressure.Domain.csproj", "{C8B828CF-151E-461F-A048-B9B80CD8B120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodPressure.Domain", "BloodPressure.Domain\BloodPressure.Domain.csproj", "{C8B828CF-151E-461F-A048-B9B80CD8B120}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{58647044-C2B4-4D44-A40A-DA798B508596}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodPressure.Infrastructure.Persistence.EFC.SQLite", "Infrastructure\BloodPressure.Infrastructure.Persistence.EFC.SQLite\BloodPressure.Infrastructure.Persistence.EFC.SQLite.csproj", "{F7CDC041-7B4A-4878-9572-04357D36EB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodPressure.UseCases", "BloodPressure.UseCases\BloodPressure.UseCases.csproj", "{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,9 +34,20 @@ Global
 		{C8B828CF-151E-461F-A048-B9B80CD8B120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8B828CF-151E-461F-A048-B9B80CD8B120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8B828CF-151E-461F-A048-B9B80CD8B120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CDC041-7B4A-4878-9572-04357D36EB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CDC041-7B4A-4878-9572-04357D36EB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CDC041-7B4A-4878-9572-04357D36EB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CDC041-7B4A-4878-9572-04357D36EB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7CDC041-7B4A-4878-9572-04357D36EB9A} = {58647044-C2B4-4D44-A40A-DA798B508596}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C4B8952-A22F-4B5C-80DC-0702B4CEDF4B}

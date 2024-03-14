@@ -1,6 +1,6 @@
-﻿using BloodPressureLogApp.Extensions;
+﻿using BloodPressure.Infrastructure.Persistence.EFC.SQLite.Extensions;
+using BloodPressureLogApp.Extensions;
 using CommunityToolkit.Maui;
-using Microcharts.Maui;
 using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 
@@ -15,7 +15,6 @@ namespace BloodPressureLogApp
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .UseSkiaSharp()
-                .UseMicrocharts()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -23,8 +22,10 @@ namespace BloodPressureLogApp
                     fonts.AddFont("fontello.ttf", "Icons");
                 });
 
+            builder.Services.AddCustomDbContext();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             builder.Services.AddAppPages();
 
