@@ -29,17 +29,11 @@
                        BackgroundColor="Transparent">-->
             <!--</Image>-->
             <!-- ROW 1 -->
-            <Frame Grid.Row="1">
+            <Frame Grid.Row="1" Grid.ColumnSpan="2">
                 <Label Text="{Binding Threshold}"
                            FontSize="12"
                            VerticalOptions="Center"/>
             </Frame>
-            <Button x:Name="btnChangePressureThreshold"
-                        Text="Change"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Command="{Binding EditPressureThresholdCommand}">
-            </Button>
             <!-- ROW 2 -->
             <SearchBar
                     x:Name="SearchBar"

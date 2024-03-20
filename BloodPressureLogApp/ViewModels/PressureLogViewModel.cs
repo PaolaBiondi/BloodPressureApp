@@ -18,7 +18,7 @@ namespace BloodPressureLogApp.ViewModels
         {
             _threshold = threshold;
             _viewBloodPressuresUseCase = viewBloodPressuresUseCase;
-            this.threshold = $"Normal blood pressure {_threshold.Systolic}/{_threshold.Diastolic}";
+            this.threshold = $"Normal blood pressure {_threshold.Systolic}/{_threshold.Diastolic} mmHg";
         }
 
         [ObservableProperty]
@@ -86,12 +86,6 @@ namespace BloodPressureLogApp.ViewModels
                 filterText = value;
                 LoadPressureAsync(value);
             }
-        }
-
-        [RelayCommand]
-        public async Task EditPressureThreshold()
-        {
-            await AppShell.Current.GoToAsync(nameof(EditBloodThresholdPage));
         }
 
         [RelayCommand]
