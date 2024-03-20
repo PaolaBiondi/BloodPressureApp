@@ -4,9 +4,14 @@
              x:Class="BloodPressureLogApp.Views.PressurePage"
              xmlns:m="clr-namespace:BloodPressure.Domain.Models;assembly=BloodPressure.Domain"
              xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
+             xmlns:dt="clr-namespace:BloodPressureLogApp.Selectors"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="vm:PressureLogViewModel"
              Title="Heart Pressure Log">
+
+    <ContentPage.Resources>
+        <dt:PressureDataTemplateSelector x:Key="PressureTemplate"></dt:PressureDataTemplateSelector>
+    </ContentPage.Resources>
     <RefreshView>
         <Grid Padding="5"
                   RowDefinitions="0.2*, Auto, 50, *, 50 "
@@ -48,8 +53,9 @@
             <CollectionView Grid.Row="3"
                                 Grid.ColumnSpan="2"
                                 ItemsSource="{Binding BloodPressure}"
+                                ItemTemplate="{StaticResource PressureTemplate}"
                                 SelectionMode="None">
-                <CollectionView.ItemTemplate>
+                <!--<CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="m:Pressure">
                         <StackLayout>
                             <SwipeView>
@@ -90,7 +96,7 @@
                             </SwipeView>
                         </StackLayout>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
+                </CollectionView.ItemTemplate>-->
                 <CollectionView.EmptyView>
                     <Grid>
                         <VerticalStackLayout VerticalOptions="Center">

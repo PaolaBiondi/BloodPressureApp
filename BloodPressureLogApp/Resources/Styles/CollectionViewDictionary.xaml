@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:BloodPressure.Domain.Models;assembly=BloodPressure.Domain"
+             xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels">
+
+    <DataTemplate x:Key="PressureItemStyle" x:DataType="m:Pressure">
+        <StackLayout>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItem Text="Delete"
+                                           IsDestructive="True"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
+                                           CommandParameter="{Binding Id}">
+                        <SwipeItem.IconImageSource>
+                            <FontImageSource FontFamily="Icons"
+                                                                     Glyph="&#xE801;"
+                                                                     Size="50">
+                            </FontImageSource>
+                        </SwipeItem.IconImageSource>
+                    </SwipeItem>
+                    <SwipeItem Text="Edit"
+                                           BackgroundColor="Green"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
+                                           CommandParameter="{Binding Id}">
+                        <SwipeItem.IconImageSource>
+                            <FontImageSource FontFamily="Icons"
+                                                                     Glyph="&#xE802;"
+                                                                     Size="50">
+                            </FontImageSource>
+                        </SwipeItem.IconImageSource>
+                    </SwipeItem>
+                </SwipeView.LeftItems>
+                <StackLayout>
+                    <Frame Margin="0,5,0,5">
+                        <StackLayout Orientation="Vertical" Spacing="5">
+                            <Label Style="{StaticResource DateTitle}" Text="{Binding Measured, StringFormat='{0:G}'}"></Label>
+                            <Label Text="{Binding Systolic, StringFormat='{0} mmHg'}"></Label>
+                            <Label Text="{Binding Diastolic, StringFormat='{0} mmHg'}"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </SwipeView>
+        </StackLayout>
+    </DataTemplate>
+    <DataTemplate x:Key="WarningPressureItemStyle" x:DataType="m:Pressure">
+        <StackLayout>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItem Text="Delete"
+                                          IsDestructive="True"
+                                          BackgroundColor="Red"
+                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
+                                          CommandParameter="{Binding Id}">
+                        <SwipeItem.IconImageSource>
+                            <FontImageSource FontFamily="Icons"
+                                                                    Glyph="&#xE801;"
+                                                                    Size="50">
+                            </FontImageSource>
+                        </SwipeItem.IconImageSource>
+                    </SwipeItem>
+                    <SwipeItem Text="Edit"
+                                          BackgroundColor="Green"
+                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
+                                          CommandParameter="{Binding Id}">
+                        <SwipeItem.IconImageSource>
+                            <FontImageSource FontFamily="Icons"
+                                                                    Glyph="&#xE802;"
+                                                                    Size="50">
+                            </FontImageSource>
+                        </SwipeItem.IconImageSource>
+                    </SwipeItem>
+                </SwipeView.LeftItems>
+                <StackLayout>
+                    <Frame Margin="0,5,0,5">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1, 0">
+                                <GradientStop Offset="0" Color="Red">
+                                </GradientStop>
+                                <GradientStop Offset="1" Color="AntiqueWhite"></GradientStop>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Vertical" Spacing="5">
+                            <Label Style="{StaticResource DateTitle}" Text="{Binding Measured, StringFormat='{0:G}'}"></Label>
+                            <Label Text="{Binding Systolic, StringFormat='{0} mmHg'}"></Label>
+                            <Label Text="{Binding Diastolic, StringFormat='{0} mmHg'}"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </SwipeView>
+        </StackLayout>
+    </DataTemplate>
+</ResourceDictionary>
