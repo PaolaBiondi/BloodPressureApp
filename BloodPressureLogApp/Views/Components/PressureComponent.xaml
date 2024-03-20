@@ -24,7 +24,7 @@
                                 InvalidStyle="{StaticResource InvalidEntryStyle}"
                                 Flags="ValidateOnValueChanged"
                                 MinimumValue="100"
-                                MaximumValue="180"
+                                MaximumValue="250"
                                 IsValid="{Binding IsSystolicProvided}"
                                 />
                     </Entry.Behaviors>
@@ -43,7 +43,7 @@
                                 InvalidStyle="{StaticResource InvalidEntryStyle}"
                                 Flags="ValidateOnValueChanged"
                                 MinimumValue="50"
-                                MaximumValue="100"
+                                MaximumValue="150"
                                 IsValid="{Binding IsDiastolicProvided}"
                                 />
                     </Entry.Behaviors>

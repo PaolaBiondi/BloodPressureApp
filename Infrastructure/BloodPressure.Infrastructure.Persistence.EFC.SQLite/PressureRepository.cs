@@ -3,6 +3,7 @@ using BloodPressure.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,8 +56,8 @@ namespace BloodPressure.Infrastructure.Persistence.EFC.SQLite
             }
             else if (DateTime.TryParse(filter, out DateTime filterDate))
             {
-                list = await _dataContext.Pressures.AsNoTracking()
-                                   .Where(p => p.Created.Equals(filterDate)).ToListAsync();
+                list = _dataContext.Pressures.AsNoTracking().AsEnumerable()
+                 .Where(p => p.Measured.Date == filterDate.Date).ToList();
             }
             else
             {
