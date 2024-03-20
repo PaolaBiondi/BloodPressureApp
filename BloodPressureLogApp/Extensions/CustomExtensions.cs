@@ -5,6 +5,7 @@ using BloodPressure.UseCases;
 using BloodPressureLogApp.ViewModels;
 using BloodPressureLogApp.Views;
 using CommunityToolkit.Maui;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

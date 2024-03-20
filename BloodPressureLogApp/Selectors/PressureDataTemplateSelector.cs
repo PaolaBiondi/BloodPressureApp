@@ -8,11 +8,14 @@ namespace BloodPressureLogApp.Selectors
 {
     public class PressureDataTemplateSelector : DataTemplateSelector
     {
+        private static Threshold? _threshold;
+
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
+            _threshold ??= Application.Current?.MainPage!.Handler?.MauiContext?.Services.GetService<Threshold>() ?? throw new ArgumentNullException("Default threshold blood pressure values unknow");
             var pressure = item as Pressure;
 
-            if (pressure?.Systolic > 120)
+            if (pressure?.Systolic < _threshold.Systolic || pressure?.Diastolic > _threshold.Diastolic)
             {
                 Application.Current!.Resources.TryGetValue("PressureItemStyle", out var dtPressure);
                 return dtPressure as DataTemplate ?? new DataTemplate();
