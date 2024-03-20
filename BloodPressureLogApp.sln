@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA2EE0BB-3969-4AC7-B10D-2BD891BEA19B}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		C:\Users\7svrc\Downloads\start.gif = C:\Users\7svrc\Downloads\start.gif
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodPressure.Domain", "BloodPressure.Domain\BloodPressure.Domain.csproj", "{C8B828CF-151E-461F-A048-B9B80CD8B120}"
@@ -16,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodPressure.Infrastructure.Persistence.EFC.SQLite", "Infrastructure\BloodPressure.Infrastructure.Persistence.EFC.SQLite\BloodPressure.Infrastructure.Persistence.EFC.SQLite.csproj", "{F7CDC041-7B4A-4878-9572-04357D36EB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodPressure.UseCases", "BloodPressure.UseCases\BloodPressure.UseCases.csproj", "{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodPressure.UseCases", "BloodPressure.UseCases\BloodPressure.UseCases.csproj", "{0EA1EAB0-07C3-4A18-AD58-991EFBE50A0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

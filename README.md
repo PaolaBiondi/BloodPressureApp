@@ -1,4 +1,133 @@
-# BloodPressureLogApp  
+# BloodPressureLogApp (Demo App)  
+---
+name: .NET MAUI - Blood Pressure App
+description: Blood pressure app that stores your measurements in your mobile, tabled or PC.
+languages:
+- csharp
+- xaml
+products:
+- dotnet-maui 
+---
+
+This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM.
+[Alt text](start.gif)  
+
+<img src="start.gif" width="40" height="40" />
+
+
+Project 'BloodPressureLogApp' has the following package references:  
+[net8.0-android34.0]: 
+   Top-level Package                               Requested          Resolved        
+   > CommunityToolkit.Maui                         7.0.1              7.0.1           
+   > CommunityToolkit.Mvvm                         8.2.2              8.2.2           
+   > Microsoft.Extensions.Logging.Debug            8.0.0              8.0.0           
+   > Microsoft.Maui.Controls                       8.0.10             8.0.10          
+   > Microsoft.Maui.Controls.Compatibility         8.0.10             8.0.10          
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )          8.0.2           
+   > SkiaSharp.Extended.UI.Maui                    2.0.0-preview.92   2.0.0-preview.92
+
+   [net8.0-ios17.2]: 
+   Top-level Package                               Requested          Resolved        
+   > CommunityToolkit.Maui                         7.0.1              7.0.1           
+   > CommunityToolkit.Mvvm                         8.2.2              8.2.2           
+   > Microsoft.Extensions.Logging.Debug            8.0.0              8.0.0           
+   > Microsoft.Maui.Controls                       8.0.10             8.0.10          
+   > Microsoft.Maui.Controls.Compatibility         8.0.10             8.0.10          
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )          8.0.2           
+   > SkiaSharp.Extended.UI.Maui                    2.0.0-preview.92   2.0.0-preview.92
+
+   [net8.0-maccatalyst17.2]: 
+   Top-level Package                               Requested          Resolved        
+   > CommunityToolkit.Maui                         7.0.1              7.0.1           
+   > CommunityToolkit.Mvvm                         8.2.2              8.2.2           
+   > Microsoft.Extensions.Logging.Debug            8.0.0              8.0.0           
+   > Microsoft.Maui.Controls                       8.0.10             8.0.10          
+   > Microsoft.Maui.Controls.Compatibility         8.0.10             8.0.10          
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )          8.0.2           
+   > SkiaSharp.Extended.UI.Maui                    2.0.0-preview.92   2.0.0-preview.92
+
+   [net8.0-windows10.0.19041]: 
+   Top-level Package                            Requested          Resolved        
+   > CommunityToolkit.Maui                      7.0.1              7.0.1           
+   > CommunityToolkit.Mvvm                      8.2.2              8.2.2           
+   > Microsoft.Extensions.Logging.Debug         8.0.0              8.0.0           
+   > Microsoft.Maui.Controls                    8.0.10             8.0.10          
+   > Microsoft.Maui.Controls.Compatibility      8.0.10             8.0.10          
+   > SkiaSharp.Extended.UI.Maui                 2.0.0-preview.92   2.0.0-preview.92
+
+Project 'BloodPressure.Domain' has the following package references
+   [net8.0-android34.0]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
+   [net8.0-ios17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-maccatalyst17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-windows10.0.19041]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
+Project 'BloodPressure.Infrastructure.Persistence.EFC.SQLite' has the following package references
+   [net8.0-android34.0]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Sqlite       8.0.3       8.0.3   
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
+   [net8.0-ios17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Sqlite          8.0.3       8.0.3   
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-maccatalyst17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Sqlite          8.0.3       8.0.3   
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-windows10.0.19041]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Sqlite       8.0.3       8.0.3   
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
+Project 'BloodPressure.UseCases' has the following package references
+   [net8.0-android34.0]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
+   [net8.0-ios17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-maccatalyst17.2]: 
+   Top-level Package                               Requested   Resolved
+   > Microsoft.Maui.Controls                       8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility         8.0.10      8.0.10  
+   > Microsoft.NET.ILLink.Tasks              (A)   [8.0.2, )   8.0.2   
+
+   [net8.0-windows10.0.19041]: 
+   Top-level Package                            Requested   Resolved
+   > Microsoft.Maui.Controls                    8.0.10      8.0.10  
+   > Microsoft.Maui.Controls.Compatibility      8.0.10      8.0.10  
+
 ---
 ## Useful links 
 [Icons](https://fontello.com/)  

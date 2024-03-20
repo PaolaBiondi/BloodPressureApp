@@ -29,7 +29,7 @@
                        BackgroundColor="Transparent">-->
             <!--</Image>-->
             <!-- ROW 1 -->
-            <Frame Grid.Row="1" Grid.ColumnSpan="2">
+            <Frame BackgroundColor="Transparent" Grid.Row="1" Grid.ColumnSpan="2">
                 <Label Text="{Binding Threshold}"
                            FontSize="12"
                            VerticalOptions="Center"/>
@@ -49,48 +49,6 @@
                                 ItemsSource="{Binding BloodPressure}"
                                 ItemTemplate="{StaticResource PressureTemplate}"
                                 SelectionMode="None">
-                <!--<CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="m:Pressure">
-                        <StackLayout>
-                            <SwipeView>
-                                <SwipeView.LeftItems>
-                                    <SwipeItem Text="Delete"
-                                           IsDestructive="True"
-                                           BackgroundColor="Red"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=DeleteCommand}"
-                                           CommandParameter="{Binding Id}">
-                                        <SwipeItem.IconImageSource>
-                                            <FontImageSource FontFamily="Icons"
-                                                                     Glyph="&#xE801;"
-                                                                     Size="50">
-                                            </FontImageSource>
-                                        </SwipeItem.IconImageSource>
-                                    </SwipeItem>
-                                    <SwipeItem Text="Edit"
-                                           BackgroundColor="Green"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PressureLogViewModel}}, Path=EditCommand}"
-                                           CommandParameter="{Binding Id}">
-                                        <SwipeItem.IconImageSource>
-                                            <FontImageSource FontFamily="Icons"
-                                                                     Glyph="&#xE802;"
-                                                                     Size="50">
-                                            </FontImageSource>
-                                        </SwipeItem.IconImageSource>
-                                    </SwipeItem>
-                                </SwipeView.LeftItems>
-                                <StackLayout>
-                                    <Frame Margin="0,5,0,5">
-                                        <StackLayout Orientation="Vertical" Spacing="5">
-                                            <Label Style="{StaticResource DateTitle}" Text="{Binding Measured, StringFormat='{0:G}'}"></Label>
-                                            <Label Text="{Binding Systolic, StringFormat='{0} mmHg'}"></Label>
-                                            <Label Text="{Binding Diastolic, StringFormat='{0} mmHg'}"></Label>
-                                        </StackLayout>
-                                    </Frame>
-                                </StackLayout>
-                            </SwipeView>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>-->
                 <CollectionView.EmptyView>
                     <Grid>
                         <VerticalStackLayout VerticalOptions="Center">
