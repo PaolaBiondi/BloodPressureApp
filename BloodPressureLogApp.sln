@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		edit.jpg = edit.jpg
 		log.jpg = log.jpg
 		README.md = README.md
+		splash.jpg = splash.jpg
 		start.gif = start.gif
 		swipegesture.jpg = swipegesture.jpg
 	EndProjectSection

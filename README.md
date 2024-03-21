@@ -11,10 +11,11 @@ products:
 
 This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM.
 
-<img src="start.gif"/>
-<img src="log.jpg">
-<img src="swipegesture.jpg">
-<img src="edit.jpg">
+<img src="splash.jpg" width="400px"/>
+<img src="start.gif" width="400px"/>
+<img src="log.jpg" width="400px">
+<img src="swipegesture.jpg" width="400px">
+<img src="edit.jpg" width="400px">
 
 
 Project 'BloodPressureLogApp' has the following package references:  
