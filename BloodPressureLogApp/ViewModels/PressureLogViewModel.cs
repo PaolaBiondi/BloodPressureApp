@@ -108,6 +108,16 @@ namespace BloodPressureLogApp.ViewModels
             await AppShell.Current.GoToAsync(nameof(AddPressurePage));
         }
 
+        [ObservableProperty]
+        public bool isRefreshing;
+
+        [RelayCommand]
+        public async Task TriggeredRefresh()
+        {
+            await LoadPressureAsync();
+            this.IsRefreshing = false;
+        }
+
         public async Task LoadPressureAsync(string? filterText = null)
         {
             this.BloodPressure?.Clear();

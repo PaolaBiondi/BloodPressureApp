@@ -12,7 +12,7 @@
     <ContentPage.Resources>
         <dt:PressureDataTemplateSelector x:Key="PressureTemplate"></dt:PressureDataTemplateSelector>
     </ContentPage.Resources>
-    <RefreshView>
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding TriggeredRefreshCommand}">
         <Grid Padding="5"
                   RowDefinitions="0.2*, Auto, 50, *, 50 "
                   RowSpacing="5"
