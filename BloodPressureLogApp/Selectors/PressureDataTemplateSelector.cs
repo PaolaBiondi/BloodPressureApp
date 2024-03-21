@@ -13,16 +13,20 @@ namespace BloodPressureLogApp.Selectors
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
             _threshold ??= Application.Current?.MainPage!.Handler?.MauiContext?.Services.GetService<Threshold>() ?? throw new ArgumentNullException("Default threshold blood pressure values unknow");
-            var pressure = item as Pressure;
-
-            if (pressure?.Systolic < _threshold.Systolic || pressure?.Diastolic > _threshold.Diastolic)
+            if (item is Pressure pressure)
             {
-                Application.Current!.Resources.TryGetValue("PressureItemStyle", out var dtPressure);
-                return dtPressure as DataTemplate ?? new DataTemplate();
+
+                if (pressure.Systolic < _threshold.Systolic && pressure.Diastolic < _threshold.Diastolic)
+                {
+                    Application.Current!.Resources.TryGetValue("PressureItemStyle", out var dtPressure);
+                    return dtPressure as DataTemplate ?? new DataTemplate();
+                }
+
+                Application.Current!.Resources.TryGetValue("WarningPressureItemStyle", out var dtWarning);
+                return dtWarning as DataTemplate ?? new DataTemplate();
             }
 
-            Application.Current!.Resources.TryGetValue("WarningPressureItemStyle", out var dtWarning);
-            return dtWarning as DataTemplate ?? new DataTemplate();
+            return new DataTemplate();
         }
     }
 }

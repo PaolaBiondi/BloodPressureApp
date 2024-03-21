@@ -76,7 +76,7 @@ namespace BloodPressure.Infrastructure.Persistence.EFC.SQLite
                 Note = i.Note
             }));
 
-            return listPressure;
+            return listPressure.OrderByDescending(i=> i.Measured).ToList();
 
         }
 

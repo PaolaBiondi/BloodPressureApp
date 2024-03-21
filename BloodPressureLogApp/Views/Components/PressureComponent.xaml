@@ -55,7 +55,7 @@
                 <Label Text="Date of measurement" VerticalOptions="Center" WidthRequest="100"></Label>
                 <DatePicker MinimumDate="{Binding MinDate}"
                             MaximumDate="{Binding MaxDate}"
-                            Date="{Binding Pressure.Measured}"
+                            Date="{Binding MeasuredDate}"
                             VerticalOptions="Center">
 
                 </DatePicker>

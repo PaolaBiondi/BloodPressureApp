@@ -12,7 +12,9 @@ products:
 This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM.
 
 <img src="start.gif"/>
-<img src="">
+<img src="log.jpg">
+<img src="swipegesture.jpg">
+<img src="edit.jpg">
 
 
 Project 'BloodPressureLogApp' has the following package references:  
@@ -138,7 +140,7 @@ Project 'BloodPressure.UseCases' has the following package references
 [MicroCharts Gerald's example github](https://github.com/jfversluis/MauiMicrochartsSample/)  
 [Udemy Frank Liu](https://www.udemy.com/share/1096Xs3@prGNOkbD_3gUDs6ry_OeVllmirlaJIoqxVEwy4kDkSigwtafEMBtbBhZ7luT8Gz-Eg==/)  
 [Udemy Hextor Uriel Perez](https://www.udemy.com/share/106HTg3@q_PJcsRGyH4j3uuUMTA4a6ZORCmO0H69OfESpB0kmOfGdTS_UY-d_Se1oyU092RNaQ==/)
-
+[mp4 to gif](https://ezgif.com/)  
 ## Errors  
 Could not find Android Resource '@styleable/SKCanvasView'. Please update to add the missing resource.
 

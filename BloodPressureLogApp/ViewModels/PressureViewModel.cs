@@ -15,6 +15,12 @@ namespace BloodPressureLogApp.ViewModels
         {
             _addPressureUseCase = addPressureUseCase;
             _viewPressureUseCase = viewPressureUseCase;
+
+            if (this.Pressure?.Id <= 0)
+            {
+                MeasuredDate = DateTime.Now;
+                MeasuredTime = DateTimeOffset.Now.TimeOfDay;
+            }
         }
 
         public Action? ToHideKeyboard = null;
@@ -27,7 +33,13 @@ namespace BloodPressureLogApp.ViewModels
 
         public DateTime MinDate { get; set; } = DateTime.Now.AddYears(-30);
         public DateTime MaxDate { get; set; } = DateTime.Now;
-        public TimeSpan MeasuredTime { get; set; } = DateTimeOffset.Now.TimeOfDay;
+        [ObservableProperty]
+        public DateTime measuredDate;
+        //public DateTime MeasuredDate { get; set; } = DateTime.Now;
+
+        [ObservableProperty]
+        public TimeSpan measuredTime;
+        //public TimeSpan MeasuredTime { get; set; } = DateTimeOffset.Now.TimeOfDay;
         public bool IsSystolicProvided { get; set; }
         public bool IsDiastolicProvided { get; set; }
 
@@ -37,6 +49,7 @@ namespace BloodPressureLogApp.ViewModels
             if (!(await ValidatePressure()))
                 return;
 
+            ConcatenateDateAndTime();
             await _addPressureUseCase.ExecuteAsync(this.Pressure!);
             await Shell.Current.GoToAsync("..");
 
@@ -49,6 +62,7 @@ namespace BloodPressureLogApp.ViewModels
             if (!(await ValidatePressure()))
                 return;
 
+            ConcatenateDateAndTime();
             await _viewPressureUseCase.UpdateAsync(this.Pressure!);
 
             await OnClose();
@@ -86,11 +100,18 @@ namespace BloodPressureLogApp.ViewModels
         public async Task LoadPressure(int id)
         {
             this.Pressure = await _viewPressureUseCase.ExecuteAsync(id);
+            MeasuredTime = this.Pressure.Measured.TimeOfDay;
+            MeasuredDate = this.Pressure.Measured.Date;
         }
 
         private async Task DisplayMessage(string message)
         {
             await Application.Current?.MainPage?.DisplayAlert("Error", message, "OK")!;
+        }
+
+        private void ConcatenateDateAndTime()
+        {
+            this.Pressure!.Measured = new DateTimeOffset(MeasuredDate.Date.Add(MeasuredTime));
         }
     }
 }

@@ -5,13 +5,7 @@ using BloodPressure.UseCases;
 using BloodPressureLogApp.ViewModels;
 using BloodPressureLogApp.Views;
 using CommunityToolkit.Maui;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace BloodPressureLogApp.Extensions
 {
@@ -24,7 +18,6 @@ namespace BloodPressureLogApp.Extensions
             services.AddTransient<IPressureRepository, PressureRepository>();
 
             services.AddSingleton<PressurePage>();
-            services.AddSingleton<EditBloodThresholdPage>();
             services.AddTransient<AddPressurePage>();
             services.AddSingleton<EditPressurePage>();
 
