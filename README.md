@@ -11,7 +11,7 @@ products:
 # BloodPressureLogApp (Demo App)  
 
 This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM. 
-App is designed to log blood pressure measurements. For measuremens which exceeds set threshold, item will be highlighted in red. 
+App is designed to log blood pressure measurements. For measuremens which exceed set threshold, item will be highlighted in red. 
 
 <img src="splash.jpg" width="400px"/>
 <img src="start.gif" width="400px"/>
