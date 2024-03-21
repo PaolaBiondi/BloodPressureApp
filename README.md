@@ -1,4 +1,3 @@
-# BloodPressureLogApp (Demo App)  
 ---
 name: .NET MAUI - Blood Pressure App
 description: Blood pressure app that stores your measurements in your mobile, tabled or PC.
@@ -9,7 +8,10 @@ products:
 - dotnet-maui 
 ---
 
-This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM.
+# BloodPressureLogApp (Demo App)  
+
+This app demonstrates MVVM pattern using various MAUI techniques for building a desktop and mobile app. There are examples how to use DI with app shell, how to navigate thru pages, different controls, data templates, ORM. 
+App is designed to log blood pressure measurements. For measuremens which exceed set threshold, item will be highlighted in red. 
 
 <img src="splash.jpg" width="400px"/>
 <img src="start.gif" width="400px"/>
