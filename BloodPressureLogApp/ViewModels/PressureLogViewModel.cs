@@ -19,6 +19,9 @@ namespace BloodPressureLogApp.ViewModels
             _threshold = threshold;
             _viewBloodPressuresUseCase = viewBloodPressuresUseCase;
             this.threshold = $"Normal blood pressure {_threshold.Systolic}/{_threshold.Diastolic} mmHg";
+            this.UpperThreshold = _threshold.Systolic;
+            this.BottomThreshold = _threshold.Diastolic;
+
         }
 
         [ObservableProperty]
@@ -76,6 +79,11 @@ namespace BloodPressureLogApp.ViewModels
 
         string? filterText;
         private readonly Threshold _threshold;
+        [ObservableProperty]
+        private uint upperThreshold;
+        [ObservableProperty]
+        private uint bottomThreshold;
+
         private readonly IViewBloodPressuresUseCase _viewBloodPressuresUseCase;
 
         public string? FilterText

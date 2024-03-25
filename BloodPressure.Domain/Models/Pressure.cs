@@ -13,6 +13,7 @@ namespace BloodPressure.Domain.Models
         public int Diastolic { get; set; }
         public DateTimeOffset Measured { get; set; } = DateTimeOffset.Now;
         public DateTimeOffset Created { get; set; } = DateTimeOffset.Now;
+        public DateTime MeasuredForSfChart => Measured.DateTime;
         public string? Note { get; set; }
     }
 }
