@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:BloodPressureLogApp.ViewModels"
              xmlns:dt="clr-namespace:BloodPressureLogApp.Selectors"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-             x:DataType="vm:PressureLogViewModel"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              Title="Heart Pressure Log">
 
     <ContentPage.Resources>
@@ -14,7 +14,7 @@
     </ContentPage.Resources>
     <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding TriggeredRefreshCommand}">
         <Grid Padding="5"
-                  RowDefinitions="0.2*, Auto, 50, *, 50 "
+                  RowDefinitions="0.2*, 0.15*, Auto, 50, *, 50 "
                   RowSpacing="5"
                   ColumnSpacing="5"
                   ColumnDefinitions=".75*, .25*">
@@ -35,16 +35,119 @@
                            VerticalOptions="Center"/>
             </Frame>
             <!-- ROW 2 -->
+            <chart:SfCartesianChart Margin="5,5,20,5" Grid.Row="2" Grid.ColumnSpan="2">
+                <chart:SfCartesianChart.Resources>
+                    <DataTemplate x:Key="tooltipTemplateSystolic">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Item.Measured}"
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                            <Label Text=" : "
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                            <Label Text="{Binding Item.Systolic}"
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                    <DataTemplate x:Key="tooltipTemplateDistolic">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Item.Measured}"
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                            <Label Text=" : "
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                            <Label Text="{Binding Item.Diastolic}"
+                                   TextColor="Wheat"
+					               HorizontalOptions="Center"
+					               VerticalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </chart:SfCartesianChart.Resources>
+                <chart:SfCartesianChart.TooltipBehavior>
+                    <chart:ChartTooltipBehavior/>
+                </chart:SfCartesianChart.TooltipBehavior>
+                <chart:SfCartesianChart.XAxes>
+                    <chart:DateTimeAxis ShowMajorGridLines="False" 
+                                        PlotOffsetStart="10" 
+                                        PlotOffsetEnd="10">
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date">
+                            </chart:ChartAxisTitle>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+                </chart:SfCartesianChart.XAxes>
+
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis ShowMajorGridLines="False" 
+                                         PlotOffsetStart="10" 
+                                         PlotOffsetEnd="10">
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Pressure [mmHg]">
+                            </chart:ChartAxisTitle>
+                        </chart:NumericalAxis.Title>
+                        <chart:NumericalAxis.PlotBands>
+                            <chart:NumericalPlotBandCollection>
+                                <chart:NumericalPlotBand Start="{Binding UpperThreshold}" End="{Binding UpperThreshold}"
+                                                    StrokeWidth="2"
+                                                    Text="Systolic threshold"
+                                                    Fill="Red">
+                                    <chart:NumericalPlotBand.LabelStyle>
+                                        <chart:ChartPlotBandLabelStyle HorizontalTextAlignment="Start" VerticalTextAlignment="Start">></chart:ChartPlotBandLabelStyle>
+                                    </chart:NumericalPlotBand.LabelStyle>
+                                </chart:NumericalPlotBand>
+                                <chart:NumericalPlotBand Start="{Binding BottomThreshold}" End="{Binding BottomThreshold}"
+                                                         StrokeWidth="2"
+                                                         Text="Diastolic threshold"
+                                                         Fill="Red">
+                                    <chart:NumericalPlotBand.LabelStyle>
+                                        <chart:ChartPlotBandLabelStyle HorizontalTextAlignment="Start" VerticalTextAlignment="Start"></chart:ChartPlotBandLabelStyle>
+                                    </chart:NumericalPlotBand.LabelStyle>
+                                </chart:NumericalPlotBand>
+
+                            </chart:NumericalPlotBandCollection>
+                        </chart:NumericalAxis.PlotBands>
+                    </chart:NumericalAxis>
+                </chart:SfCartesianChart.YAxes>
+
+                <chart:LineSeries ItemsSource="{Binding BloodPressure}" TooltipTemplate="{StaticResource tooltipTemplateSystolic}" 
+                                  EnableTooltip="True"
+                                  ShowDataLabels="False"
+                                  Fill="Blue"
+                                  XBindingPath="MeasuredForSfChart" 
+                                  YBindingPath="Systolic">
+                    <chart:LineSeries.DataLabelSettings>
+                        <chart:CartesianDataLabelSettings LabelPlacement="Inner"/>
+                    </chart:LineSeries.DataLabelSettings>
+                </chart:LineSeries>
+                <chart:LineSeries ItemsSource="{Binding BloodPressure}" TooltipTemplate="{StaticResource tooltipTemplateDistolic}" 
+                                  EnableTooltip="True"
+                                  ShowDataLabels="False"
+                                  Fill="BlueViolet"
+                                  XBindingPath="MeasuredForSfChart" 
+                                  YBindingPath="Diastolic">
+                    <chart:LineSeries.DataLabelSettings>
+                        <chart:CartesianDataLabelSettings LabelPlacement="Inner"/>
+                    </chart:LineSeries.DataLabelSettings>
+                </chart:LineSeries>
+            </chart:SfCartesianChart>
+            <!-- ROW 3 -->
             <SearchBar
                     x:Name="SearchBar"
                     Placeholder="Search"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.ColumnSpan="2"
                     Text="{Binding FilterText}">
             </SearchBar>
 
-            <!-- ROW 3 -->
-            <CollectionView Grid.Row="3"
+            <!-- ROW 4 -->
+            <CollectionView Grid.Row="4"
                                 Grid.ColumnSpan="2"
                                 ItemsSource="{Binding BloodPressure}"
                                 ItemTemplate="{StaticResource PressureTemplate}"
@@ -66,10 +169,10 @@
                 </CollectionView.EmptyView>
 
             </CollectionView>
-            <!-- ROW 4 -->
+            <!-- ROW 5 -->
             <Button x:Name="btnAdd" 
                     Text="Add Measurement"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.ColumnSpan="2"
                     CornerRadius="15"
                     Command="{Binding AddCommand}">
