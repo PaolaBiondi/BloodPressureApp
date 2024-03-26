@@ -151,6 +151,8 @@ dotnet add package  Syncfusion.Maui.Charts
 
 ### Licensing  
 Add `Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR KEY");` during initialization of app.  
+Claimed for community license. Claim license key under syncfusion profile, Licese & Downloads -> Claim License Key tab.  
+
 ---
 ## Useful links 
 [Icons](https://fontello.com/)  
