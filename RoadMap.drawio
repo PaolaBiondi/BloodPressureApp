@@ -1,9 +1,24 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.4">
   <diagram name="Page-1" id="L8D_sOTc0Vsrg8IX1oJM">
-    <mxGraphModel dx="1426" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1188" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
-        <mxCell id="1" style="" parent="0" />
+        <mxCell id="1" style="locked=1;" parent="0" />
+        <UserObject label="Alternative" link="data:action/json,{&quot;actions&quot;:[{&quot;show&quot;:{&quot;tags&quot;:[&quot;alternative&quot;]}}]}" id="JQdzOv53W2vP1qIU4ONl-63">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=default;strokeColor=default;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+            <mxGeometry x="50" y="159" width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Alternative" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;: {&quot;tags&quot;: [&quot;alternative&quot;]}}]}" tags="alternative" id="M2KZPHTKAGTmuo49AGG_-80">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=#FFE599;strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
+            <mxGeometry x="50" y="159" width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Wouldn&#39;t recommend" link="data:action/json,{&quot;actions&quot;:[{&quot;show&quot;:{&quot;tags&quot;:[&quot;avoid&quot;]}}]}" id="JQdzOv53W2vP1qIU4ONl-65">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=default;strokeColor=default;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="1">
+            <mxGeometry x="50" y="179" width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
         <mxCell id="M2KZPHTKAGTmuo49AGG_-1" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#CCCCCC;labelBackgroundColor=none;fontSize=16;rounded=0;" parent="1" source="M2KZPHTKAGTmuo49AGG_-2" target="M2KZPHTKAGTmuo49AGG_-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -42,9 +57,9 @@
         <mxCell id="M2KZPHTKAGTmuo49AGG_-15" value="Patterns" style="fillColor=#56517E;strokecolor=none;rounded=1;fontColor=#FFFFFF;strokeColor=none;fontStyle=1;fontSize=14;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="415" y="591" width="160" height="30" as="geometry" />
         </mxCell>
-        <UserObject label="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot; color=&quot;#10739E&quot;&gt;&lt;b&gt;Version control&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;Git&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;font size=&quot;1&quot;&gt;GitHub&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;BitBucket&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;SVN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;GitLab&lt;br&gt;TFS&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;Gitea&lt;/font&gt;&lt;/div&gt;" link="Jobs 1" id="M2KZPHTKAGTmuo49AGG_-16">
+        <UserObject label="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot; color=&quot;#10739E&quot;&gt;&lt;b&gt;Version control&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" link="Jobs 1" id="M2KZPHTKAGTmuo49AGG_-16">
           <mxCell style="rounded=1;strokeColor=none;fillColor=#EEEEEE;align=center;arcSize=12;verticalAlign=top;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
-            <mxGeometry x="235" y="149" width="160" height="151" as="geometry" />
+            <mxGeometry x="235" y="149" width="160" height="31" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="M2KZPHTKAGTmuo49AGG_-17" value="&lt;font color=&quot;#f2931e&quot;&gt;&lt;b&gt;Google&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#f2931e&quot;&gt;&lt;b&gt;Perplexity&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#f2931e&quot;&gt;&lt;b&gt;ChatGpt&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;strokeColor=none;fillColor=#EEEEEE;align=center;arcSize=12;verticalAlign=top;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
@@ -59,30 +74,11 @@
         <mxCell id="M2KZPHTKAGTmuo49AGG_-45" value="Roadmap" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
           <mxGeometry x="340" y="31" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-79" value="Good to know" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#8100d6, #67b2ff);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
-          <mxGeometry x="50" y="139" width="12" height="12" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-80" value="Alternative" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=#FFE599;strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
-          <mxGeometry x="50" y="159" width="12" height="12" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-97" value="" style="verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#00dd00;fillColor3=#004400;strokeColor=#006600;" parent="1" vertex="1">
-          <mxGeometry x="30" y="101.5" width="10" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-99" value="" style="verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#ccccff;fillColor3=#8100D6;strokeColor=#000066;" parent="1" vertex="1">
-          <mxGeometry x="30" y="132.5" width="10" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-100" value="" style="verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#ffff00;fillColor3=#888800;strokeColor=#999900;" parent="1" vertex="1">
-          <mxGeometry x="30" y="171.5" width="10" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-101" value="" style="verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#666666;fillColor3=#440000;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="30" y="204" width="10" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-104" value="Wouldn&#39;t recommend" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=#666666;strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
-          <mxGeometry x="50" y="179" width="12" height="12" as="geometry" />
-        </mxCell>
-        <mxCell id="M2KZPHTKAGTmuo49AGG_-105" value="Must know" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#006633,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
-          <mxGeometry x="50" y="120" width="12" height="12" as="geometry" />
-        </mxCell>
+        <object label="Wouldn&#39;t recommend" tags="avoid" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;: {&quot;tags&quot;: [&quot;avoid&quot;]}}]}" id="M2KZPHTKAGTmuo49AGG_-104">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=#666666;strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="1" vertex="1">
+            <mxGeometry x="50" y="179" width="12" height="12" as="geometry" />
+          </mxCell>
+        </object>
         <mxCell id="VMWJDIf144AQG_EVKxVJ-2" value="" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.infographic.circularCallout2;dy=15;strokeColor=#F2931E;labelPosition=center;align=center;fontColor=#F2931E;fontStyle=1;fontSize=24;shadow=0;direction=north;flipH=1;" parent="1" vertex="1">
           <mxGeometry x="399" y="315" width="246" height="60" as="geometry" />
         </mxCell>
@@ -92,6 +88,32 @@
         <mxCell id="4aiCjU7T3tnZBi2nyRzy-35" value="" style="fillColor=#dddddd;rounded=0;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="3" y="958" width="840" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-56" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="50" y="120" width="12" height="12" as="geometry" />
+        </mxCell>
+        <UserObject label="Must know" link="data:action/json,{&quot;actions&quot;:[{&quot;show&quot;:{&quot;tags&quot;:[&quot;must&quot;]}}]}" id="JQdzOv53W2vP1qIU4ONl-55">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=default;strokeColor=default;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-56">
+            <mxGeometry width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Must know" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;: {&quot;tags&quot;: [&quot;must&quot;]}}]}" tags="must" id="M2KZPHTKAGTmuo49AGG_-105">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#006633,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="JQdzOv53W2vP1qIU4ONl-56" vertex="1">
+            <mxGeometry width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-64" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="50" y="139" width="12" height="12" as="geometry" />
+        </mxCell>
+        <UserObject label="Good to know" link="data:action/json,{&quot;actions&quot;:[{&quot;show&quot;:{&quot;tags&quot;:[&quot;good&quot;]}}]}" id="JQdzOv53W2vP1qIU4ONl-59">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=default;strokeColor=default;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-64">
+            <mxGeometry width="12" height="12" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <object label="Good to know" tags="good" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;: {&quot;tags&quot;: [&quot;good&quot;]}}]}" id="M2KZPHTKAGTmuo49AGG_-79">
+          <mxCell style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#8100d6, #67b2ff);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="JQdzOv53W2vP1qIU4ONl-64" vertex="1">
+            <mxGeometry width="12" height="12" as="geometry" />
+          </mxCell>
+        </object>
         <mxCell id="4aiCjU7T3tnZBi2nyRzy-43" value="Toggles" style="locked=1;" parent="0" />
         <UserObject label="Origo" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;:{&quot;cells&quot;:[&quot;4aiCjU7T3tnZBi2nyRzy-2&quot;]}}]}" id="4aiCjU7T3tnZBi2nyRzy-44">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=3;" parent="4aiCjU7T3tnZBi2nyRzy-43" vertex="1">
@@ -153,7 +175,7 @@
             <mxGeometry x="639" y="947" width="80" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="4aiCjU7T3tnZBi2nyRzy-9" value="Misc" style="locked=1;" parent="0" />
+        <mxCell id="4aiCjU7T3tnZBi2nyRzy-9" value="Misc" style="" parent="0" />
         <UserObject label="Miscellaneous" link="data:action/json,{&quot;actions&quot;:[{&quot;toggle&quot;:{&quot;cells&quot;:[&quot;4aiCjU7T3tnZBi2nyRzy-9&quot;]}}]}" id="4aiCjU7T3tnZBi2nyRzy-13">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=3;" parent="4aiCjU7T3tnZBi2nyRzy-9" vertex="1">
             <mxGeometry x="139" y="947" width="80" height="50" as="geometry" />
@@ -179,6 +201,127 @@
         </mxCell>
         <mxCell id="JQdzOv53W2vP1qIU4ONl-6" value="&lt;font color=&quot;#12aab5&quot;&gt;&lt;b&gt;GitHub Codespace&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;color: rgb(18, 170, 181); background-color: transparent;&quot;&gt;LocalDb (MSSQL Express)&amp;nbsp;&lt;/b&gt;" style="rounded=1;strokeColor=none;fillColor=#EEEEEE;align=center;arcSize=12;verticalAlign=top;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="4aiCjU7T3tnZBi2nyRzy-9">
           <mxGeometry x="234" y="710" width="160" height="70" as="geometry" />
+        </mxCell>
+        <object label="" tags="must" id="JQdzOv53W2vP1qIU4ONl-14">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="50" y="20" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Git&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-14">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-9" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#006633,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-14">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="avoid" id="JQdzOv53W2vP1qIU4ONl-24">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="160" y="60" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-22" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Git&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-24">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-23" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#666666,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-24">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="alternative" id="JQdzOv53W2vP1qIU4ONl-25">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="160" y="20" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-19" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Git&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-25">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-20" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#FFE599,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-25">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="good" id="JQdzOv53W2vP1qIU4ONl-26">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="49" y="60" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-16" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Git&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-26">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-17" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#8100D6,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-26">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="must" id="JQdzOv53W2vP1qIU4ONl-27">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="195" y="192" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-28" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Git&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-27">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-29" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#006633,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-27">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="must" id="JQdzOv53W2vP1qIU4ONl-30">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="195" y="232" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-31" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GitHub&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-30">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-32" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#006633,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-30">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="good" id="JQdzOv53W2vP1qIU4ONl-36">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="195" y="272" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-37" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GitLab&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-36">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-38" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#8100D6,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-36">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="good" id="JQdzOv53W2vP1qIU4ONl-39">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="195" y="312" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-40" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;BitBucket&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-39">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-41" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#8100D6,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-39">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="avoid" id="JQdzOv53W2vP1qIU4ONl-45">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="304" y="191" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-46" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;SVN&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-45">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-47" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#666666,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-45">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="avoid" id="JQdzOv53W2vP1qIU4ONl-48">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="304" y="231" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-49" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;TFS&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-48">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-50" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#666666,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-48">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
+        <object label="" tags="alternative" id="JQdzOv53W2vP1qIU4ONl-51">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="304" y="271" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-52" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Gitea&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-51">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQdzOv53W2vP1qIU4ONl-53" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=light-dark(#FFE599,#67B2FF);strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="JQdzOv53W2vP1qIU4ONl-51">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
