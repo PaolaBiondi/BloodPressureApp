@@ -531,6 +531,17 @@
         <mxCell id="BV6B9CjeytOaxOdFs6d4-31" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_1;fillColor=light-dark(#EEEEEE,#202020);strokeColor=none;fontColor=default;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;rounded=1;arcSize=12;" parent="BV6B9CjeytOaxOdFs6d4-29" vertex="1">
           <mxGeometry x="78" width="12" height="12" as="geometry" />
         </mxCell>
+        <object label="" tags="good" id="n9DwdoVZXlDUG74vrjvM-42">
+          <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
+            <mxGeometry x="703" y="877" width="90" height="30" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="n9DwdoVZXlDUG74vrjvM-43" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;XAML&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#EEEEEE,#202020);strokeColor=none;arcSize=12;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;" vertex="1" parent="n9DwdoVZXlDUG74vrjvM-42">
+          <mxGeometry width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n9DwdoVZXlDUG74vrjvM-44" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_2;fillColor=#8100D6;strokeColor=none;fontColor=#000000;align=left;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="n9DwdoVZXlDUG74vrjvM-42">
+          <mxGeometry x="78" width="12" height="12" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
