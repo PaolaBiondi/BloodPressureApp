@@ -531,7 +531,7 @@
         <mxCell id="BV6B9CjeytOaxOdFs6d4-31" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.checkbox_1;fillColor=light-dark(#EEEEEE,#202020);strokeColor=none;fontColor=default;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;labelPosition=right;verticalLabelPosition=middle;spacingLeft=10;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;rounded=1;arcSize=12;" parent="BV6B9CjeytOaxOdFs6d4-29" vertex="1">
           <mxGeometry x="78" width="12" height="12" as="geometry" />
         </mxCell>
-        <object label="" tags="good" id="n9DwdoVZXlDUG74vrjvM-42">
+        <object label="" tags="good misc systec" id="n9DwdoVZXlDUG74vrjvM-42">
           <mxCell style="group" vertex="1" connectable="0" parent="4aiCjU7T3tnZBi2nyRzy-9">
             <mxGeometry x="703" y="877" width="90" height="30" as="geometry" />
           </mxCell>
